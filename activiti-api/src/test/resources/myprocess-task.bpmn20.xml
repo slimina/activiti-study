@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:tns="http://www.activiti.org/test" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" expressionLanguage="http://www.w3.org/1999/XPath" id="m1540617087596" name="" targetNamespace="http://www.activiti.org/test" typeLanguage="http://www.w3.org/2001/XMLSchema">
+  <process id="myprocess" name="测试流程" >
+    <startEvent id="start" name="StartEvent"></startEvent>
+    <sequenceFlow id="flow1" sourceRef="start" targetRef="userTask"></sequenceFlow>
+
+    <userTask   id="userTask" name="节点审批" activiti:candidateUsers="jimmy,tom,lucy">
+      <documentation> some task ${message}</documentation>
+    </userTask>
+
+    <sequenceFlow id="flow" sourceRef="userTask" targetRef="end"></sequenceFlow>
+    <endEvent id="end" name="EndEvent"></endEvent>
+  </process>
+</definitions>
